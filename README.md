@@ -1,6 +1,6 @@
 # OLAP Spotify Music Trend Analytics — Data Warehouse and OLAP Project
 
-This repository contains the coursework project for the Data Warehouse and Decision Support Systems (DSS) subject at the University of Information Technology (UIT) — VNU-HCM. The project focuses on analyzing Spotify Trending Songs data using Data Warehouse architecture, ETL processing, OLAP cube modeling, and analytical reporting.
+This repository contains the coursework project for the Data Warehouse and OLAP subject at the University of Information Technology (UIT) — VNU-HCM. The project focuses on analyzing Spotify Trending Songs data using Data Warehouse architecture, ETL processing, OLAP cube modeling, and analytical reporting.
 
 The goal of the project is to transform raw Spotify chart data into structured warehouse data and enable multi-dimensional analytical exploration to support trend analysis and insight discovery.
 
@@ -21,7 +21,6 @@ The analysis supports ranking-pattern exploration, time-based trend monitoring, 
 - Develop OLAP cubes to enable multi-dimensional analysis (song, artist, time, country)  
 - Perform ranking and trend exploration using MDX queries and Pivot browsing  
 - Create analytical dashboards to summarize key insights and performance indicators  
-- Demonstrate the role of OLAP and DSS concepts in analytical decision support
 -  Extend analytical results with a small **Data Mining component** for
   popularity-level classification (Low / Medium / Hit) based on audio,
   temporal, and geographic features  
@@ -55,29 +54,39 @@ The analysis supports ranking-pattern exploration, time-based trend monitoring, 
 Public dataset used in this project:
 
 Top Spotify Songs in 73 Countries (Daily Updated) — Kaggle  
-https://www.kaggle.com/datasets/asaniczka/top-spotify-songs-in-73-countries-daily-updated
-
-The working dataset used in the ETL pipeline is stored in compressed form or referenced externally when file size exceeds GitHub limits.
+https://www.kaggle.com/datasets/asaniczka/top-spotify-songs-in-73-countries-daily-updated 
 
 ---
 
-## Output
+## Artifacts Produced (Processing & Analytics Pipeline)
 
-### Dashboard
-`![Dashboard](Images/dashboard.pngn`
+- **Preprocessed dataset —  [`final_data.rar`](Data/final_data.rar)**
 
-### Data Model / Schema
-`![Schema](images/Snowflake.png)`
+  - Raw Spotify chart data was cleaned and standardized
+  - Removed special characters and inconsistent textual fields
+  - Filtered to retain only **Asian countries / regions** for focused analysis
+  - Exported as the final dataset used in the warehouse pipeline
 
----
+- **Snowflake-style Data Warehouse schema**
+  - Fact table for ranking and streaming metrics
+  - Dimension tables for song, artist, album, country, date, and popularity group
+  - Schema designed based on analytical and OLAP reporting requirements
 
-## Artifacts Produced
+- **ETL pipeline (SSIS)**
+  - Loads the preprocessed dataset into the Data Warehouse
+  - Performs data transformation, mapping, and surrogate-key handling
+  - Populates fact and dimension tables consistently
 
-- ETL project (SSIS) used for data ingestion and warehouse loading  
-- OLAP cube project (SSAS) enabling multi-dimensional analysis  
-- MDX scripts for ranking, trend, and exploration queries  
-- Power BI report for analytical visualization and interpretation  
-- (Optional) analytical notebook for additional data exploration  
+- **OLAP cube (SSAS)**
+  - Supports multi-dimensional exploration across time, song, artist, and geography
+  - Enables ranking-trend analysis and regional performance comparison
+
+### MDX Query 
+- A collection of MDX scripts used for:
+  - trend exploration
+  - ranking-movement analysis
+  - time-based and region-based comparisons
+- Queries are executed directly on the SSAS cube to support analytical reasoning.
 
 ### Data Mining Component
 
@@ -103,3 +112,27 @@ This component illustrates how analytical results from the warehouse can be exte
 ---
 
 ## Repository Structure
+
+- **Data/**
+  - `final_data.rar` — compressed dataset used for ETL
+
+- **Document/**: Project documentation
+
+- **Images/**
+  - `dashboard.png` — Power BI dashboard screenshot  
+  - `snowflake.png` — data warehouse schema diagram
+
+- **Source/**
+  - **Data Mining Project/** — Mining notebook
+  - **Excel Pivot file/** — Pivot exploration queries and exports  
+  - **SSAS Project/** — OLAP cube (SSAS)  
+  - **SSIS Project/** — ETL pipeline (SSIS)  
+  - **SSRS Project/** — Power BI and Locker
+## Author
+
+Student: **Đặng Quốc Cường**  
+Institution: **University of Information Technology (UIT), VNU-HCM**  
+Course: **Data Warehouse and OLAP**
+
+---
+
