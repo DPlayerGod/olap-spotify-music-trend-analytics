@@ -1,0 +1,12 @@
+﻿SELECT 
+    NON EMPTY
+        [Dim Song].[Is Explicit].[Is Explicit].MEMBERS ON COLUMNS,  
+    
+    NON EMPTY
+        [Dim Country].[Country Name].[Country Name].MEMBERS ON ROWS  
+
+FROM 
+    [TRENDING SONGS SSIS]
+
+WHERE
+    [Measures].[Popularity];

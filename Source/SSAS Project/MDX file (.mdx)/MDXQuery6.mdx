@@ -1,0 +1,16 @@
+﻿SELECT 
+    {
+        [Measures].[Fact Song Snapshot Count],
+        [Measures].[Average Popularity]
+    } ON COLUMNS,
+    
+    NON EMPTY
+        (
+            [Dim Song - Date].[Y_M_D].[Year].&[2000]
+            :
+            [Dim Song - Date].[Y_M_D].[Year].&[2025]
+        )
+        ON ROWS
+
+FROM 
+    [TRENDING SONGS SSIS];

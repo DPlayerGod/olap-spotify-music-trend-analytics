@@ -1,0 +1,22 @@
+﻿WITH
+MEMBER [Measures].[Average Popularity By Aritst] AS
+    DIVIDE(
+        [Measures].[Popularity], 
+        [Measures].[Fact Song Snapshot Count]
+    ),
+    FORMAT_STRING = "#,##0.0"
+
+SELECT
+    { [Measures].[Average Popularity] } ON COLUMNS,
+    
+    NON EMPTY 
+    TOPCOUNT(
+        [Dim Artist].[Artist Name].[Artist Name].MEMBERS,
+        5, 
+        [Measures].[Average Popularity]
+    ) ON ROWS
+
+FROM
+    [TRENDING SONGS SSIS]
+WHERE
+    ( [Dim Date].[Y_M_D].[Day].&[1]&[1]&[2025] );

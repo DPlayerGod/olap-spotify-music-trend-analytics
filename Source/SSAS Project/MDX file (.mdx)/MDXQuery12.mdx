@@ -1,0 +1,18 @@
+﻿
+WITH
+SET [Top5Album1] AS
+    TOPCOUNT(
+        [Dim Song].[Album Name].[Album Name].MEMBERS,
+        5,
+        [Measures].[Unique Song Count]
+    )
+
+SELECT
+    { [Measures].[Unique Song Count] } ON COLUMNS,
+    [Top5Album1] ON ROWS
+FROM [TRENDING SONGS SSIS]
+
+WHERE ( 
+        [Dim Country].[Country Name].&[VN], 
+        [Dim Date].[Y_M_D].[Month].&[2]&[2025]
+     );

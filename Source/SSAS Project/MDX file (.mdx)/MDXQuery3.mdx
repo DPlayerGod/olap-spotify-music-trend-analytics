@@ -1,0 +1,37 @@
+﻿WITH 
+MEMBER [Measures].[Average Danceability] AS
+    AVG(
+        EXISTING 
+        NONEMPTY(
+            [Dim Song].[Song Id].[Song Id].MEMBERS,
+            [Measures].[Fact Song Snapshot Count]
+        ),
+        VAL([Dim Song].[Song Id].CURRENTMEMBER.Properties("Danceability"))
+    ),
+    FORMAT_STRING = "0.000"
+
+MEMBER [Measures].[Average Energy] AS
+    AVG(
+        EXISTING 
+        NONEMPTY(
+            [Dim Song].[Song Id].[Song Id].MEMBERS,
+            [Measures].[Fact Song Snapshot Count]
+        ),
+        VAL([Dim Song].[Song Id].CURRENTMEMBER.Properties("Energy"))
+    ),
+    FORMAT_STRING = "0.000"
+
+SELECT 
+    { 
+        [Measures].[Average Danceability], 
+        [Measures].[Average Energy] 
+    } ON COLUMNS,
+   
+    NON EMPTY
+        [Dim Song].[Mode].[Mode].MEMBERS
+    ON ROWS
+
+FROM 
+    [TRENDING SONGS SSIS]
+WHERE 
+    ( [Dim Date].[Y_M_D].[Month].&[1]&[2025] : [Dim Date].[Y_M_D].[Month].&[3]&[2025] );

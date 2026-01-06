@@ -1,0 +1,22 @@
+WITH 
+MEMBER [Measures].[Average Weekly Movement] AS
+    DIVIDE(
+        [Measures].[Weekly Movement],
+        [Measures].[Fact Song Snapshot Count]
+    ),
+    FORMAT_STRING = "0.00"
+
+SELECT
+    { [Measures].[Average Weekly Movement] } ON COLUMNS,
+
+    NON EMPTY
+    [Dim Country].[Country Name].[Country Name].MEMBERS
+    ON ROWS
+
+FROM
+    [TRENDING SONGS SSIS]
+
+WHERE
+(
+    [Dim Date].[Y_M_D].[Month].&[4]&[2025] : [Dim Date].[Y_M_D].[Month].&[6]&[2025]
+);

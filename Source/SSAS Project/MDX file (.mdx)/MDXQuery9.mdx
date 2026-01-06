@@ -1,0 +1,28 @@
+
+WITH
+MEMBER [Measures].[Unique Song Count] AS
+    COUNT(
+        NONEMPTY(
+            EXISTING([Dim Song].[Song Id].[Song Id].MEMBERS),
+            [Measures].[Fact Song Snapshot Count]
+        )
+    ),
+    FORMAT_STRING = "#,##0"
+
+SET [Months in 2024] AS
+    [Dim Date].[Y_M_D].[Year].&[2024].CHILDREN
+
+
+SELECT
+   
+    NON EMPTY [Months in 2024]
+    ON 0,
+
+    NON EMPTY
+        [Dim Country].[Country Name].[Country Name].MEMBERS
+    ON 1
+FROM
+    [TRENDING SONGS SSIS]
+WHERE
+    ( [Measures].[Unique Song Count] )
+;

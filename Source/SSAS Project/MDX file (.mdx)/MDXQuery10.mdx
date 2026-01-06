@@ -1,0 +1,7 @@
+﻿SELECT
+    { [Measures].[Unique Song Count] } ON COLUMNS,
+    NON EMPTY [Dim Country].[Country Name].[Country Name].MEMBERS ON ROWS
+FROM [TRENDING SONGS SSIS]
+WHERE
+    ( [Dim Date].[Y_M_D].[Month].&[1]&[2025] :
+      [Dim Date].[Y_M_D].[Month].&[3]&[2025] );

@@ -1,0 +1,25 @@
+﻿
+WITH
+MEMBER [Measures].[Average Daily Movement] AS
+    DIVIDE(
+        [Measures].[Daily Movement],
+        [Measures].[Fact Song Snapshot Count]
+    ),
+    FORMAT_STRING = "0.00"
+
+SELECT
+  
+    { [Measures].[Average Daily Movement] } ON COLUMNS,
+    
+    
+    NON EMPTY
+    DRILLDOWNMEMBER(
+      
+        { [Dim Date].[Y_M_D].[Year].&[2024] },
+        { [Dim Date].[Y_M_D].[Year].&[2024] }
+    )
+    ON ROWS
+
+FROM
+    [TRENDING SONGS SSIS]
+;

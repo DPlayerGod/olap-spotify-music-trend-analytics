@@ -1,0 +1,23 @@
+﻿WITH 
+MEMBER [Measures].[Average Duration (ms)] AS
+    AVG(
+        EXISTING 
+        NONEMPTY(
+            [Dim Song].[Song Id].[Song Id].MEMBERS,
+            [Measures].[Fact Song Snapshot Count]
+        ),
+        VAL([Dim Song].[Song Id].CURRENTMEMBER.Properties("Duration Ms"))
+    ),
+    FORMAT_STRING = "#,##0"
+
+SELECT 
+    { [Measures].[Average Duration (ms)] } ON COLUMNS,
+   
+    NON EMPTY
+        [Dim Song].[Album Name].[Album Name].MEMBERS
+    ON ROWS
+
+FROM 
+    [TRENDING SONGS SSIS]
+WHERE 
+    ( [Dim Date].[Y_M_D].[Month].&[1]&[2025] );

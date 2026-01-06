@@ -1,0 +1,891 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f3ac8159-0a5b-4855-9988-28f8cb9e67ab" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>TRENDING SONGS SSIS</ID>
+  <Name>TRENDING SONGS SSIS</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="34" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-11288" scrolltop="-1031" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="65" x="24469" y="14584" backcolor="16119285" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimArtist" left="11164" top="5695" logicalid="17" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000034060000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimArtist" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCountry" left="11365" top="13341" logicalid="18" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000034060000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimCountry" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimSong" left="5420" top="1" logicalid="19" controlid="3" masterid="0" hint1="0" hint2="0" width="3344" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000100d000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimSong" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimPopularityGroup" left="5218" top="18588" logicalid="20" controlid="4" masterid="0" hint1="0" hint2="0" width="3747" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000a30e000003090000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimPopularityGroup" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDate" left="20" top="7015" logicalid="21" controlid="5" masterid="0" hint1="0" hint2="0" width="3000" height="2667" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00006b0a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimDate" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="SongArtist" left="11164" top="1707" logicalid="22" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000034060000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_SongArtist" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactSongSnapshot" left="5218" top="12082" logicalid="23" controlid="7" masterid="0" hint1="0" hint2="0" width="3747" height="4106" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000a30e00000a100000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FactSongSnapshot" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimAlbum" left="20" top="2668" logicalid="24" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00009b070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimAlbum" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="12265" top="2995" logicalid="25" controlid="9" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_SongArtist_DimArtist]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="6" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="12664" y="5695" />
+              <point x="12664" y="3295" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="8665" top="13736" logicalid="26" controlid="10" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FactSongSnapshot_DimCountry]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="7" sourceattachpoint="12" destattachpoint="21" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="11365" y="14135" />
+              <point x="8965" y="14135" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="2720" top="2201" logicalid="27" controlid="11" masterid="0" hint1="0" hint2="0" width="3000" height="1840" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_DimSong_DimAlbum]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="8" destid="3" sourceattachpoint="13" destattachpoint="18" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="3020" y="3641" />
+              <point x="4220" y="3641" />
+              <point x="4220" y="2501" />
+              <point x="5420" y="2501" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="8464" top="2102" logicalid="28" controlid="12" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_SongArtist_DimSong]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="6" sourceattachpoint="19" destattachpoint="12" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8764" y="2501" />
+              <point x="11164" y="2501" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="6693" top="4502" logicalid="29" controlid="13" masterid="0" hint1="0" hint2="0" width="1248" height="7880" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FactSongSnapshot_DimSong]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="7" sourceattachpoint="5" destattachpoint="8" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7092" y="5001" />
+              <point x="7092" y="8541" />
+              <point x="7641" y="8541" />
+              <point x="7641" y="12082" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="6692" top="15888" logicalid="30" controlid="14" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FactSongSnapshot_DimPopularityGroup]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="7" sourceattachpoint="6" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7091" y="18588" />
+              <point x="7091" y="16188" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1121" top="9183" logicalid="31" controlid="15" masterid="0" hint1="0" hint2="0" width="5170" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FactSongSnapshot_DimDate]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="7" sourceattachpoint="5" destattachpoint="2" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1520" y="9682" />
+              <point x="1520" y="10882" />
+              <point x="5991" y="10882" />
+              <point x="5991" y="12082" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1121" top="4315" logicalid="32" controlid="16" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="1973790" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_DimAlbum_DimDate]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="8" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1520" y="7015" />
+              <point x="1520" y="4615" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-11288</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1031</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>1</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>65</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="baac0c23-b8df-4e88-aad3-05c9e4c7b139">
+      <ID>Dim Country</ID>
+      <Name>Dim Country</Name>
+      <DimensionID>Dim Country</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="13f8499e-0a86-4717-8b28-918505bb118c">
+          <AttributeID>Country Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bc19c19f-d4d2-4df9-a0d1-f2e92d911dfd">
+          <AttributeID>Country Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="c273a281-12c3-4858-a2f8-b6f02ead26cd">
+      <ID>Dim Song</ID>
+      <Name>Dim Song</Name>
+      <DimensionID>Dim Song</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="2e0b7da3-5cdf-413a-af80-93d08feca3ad">
+          <AttributeID>Song Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="14d491a1-250c-413e-9511-2bdbdfc336c0">
+          <AttributeID>Album Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ae33d6b7-a794-4420-b3bf-a589f71ba519">
+          <AttributeID>Date Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7b40d8b1-07c0-44a8-b5c3-1575c32c5da4">
+          <AttributeID>Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0e0b9879-fe79-41f2-95f8-6a729d160b83">
+          <AttributeID>Is Explicit</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8841cb52-7dfb-4f93-a371-c765bc504f14">
+          <AttributeID>Duration Ms</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="44943696-1e5a-4bf5-afc8-ce224f5e0565">
+          <AttributeID>Danceability</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cb5208ac-0d75-4dfb-9622-cf5596889fcc">
+          <AttributeID>Energy</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f28fc6f1-6717-4c92-b9d3-f2f2a0e1ae09">
+          <AttributeID>Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="72448f2a-0345-45d0-bf4b-6c74877f4b10">
+          <AttributeID>Loudness</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="9ae6a980-c0b9-4273-9af9-54709bd1420f">
+          <AttributeID>Mode</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3293617b-2bca-4ee6-9096-c1dcf004a7f0">
+          <AttributeID>Acousticness</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="92d2ed89-6561-46dc-8f26-0c00528a9107">
+          <AttributeID>Instrumentalness</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8d90509a-7b06-4ee2-b912-2b1b5cc904f7">
+          <AttributeID>Tempo</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="45f31101-6e98-4c89-95d9-8cc4bfc032d7">
+          <AttributeID>Time Signature</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="efa3a532-01fd-4aae-9319-63266a8601ec">
+          <AttributeID>Spotify Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="448cbd2e-83ea-4803-bebe-f308a7019536">
+          <AttributeID>Album Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="32176748-a982-4122-bb81-2c1699287ec1">
+      <ID>Dim Popularity Group</ID>
+      <Name>Dim Popularity Group</Name>
+      <DimensionID>Dim Popularity Group</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4b95eab8-8f95-4615-b04b-d64dd9008f53">
+          <AttributeID>Popularity Group Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7851115e-05ad-4286-81f0-9fa27e458d40">
+          <AttributeID>Group Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e676e1d5-f2ec-4c78-a6f7-84aae0099872">
+          <AttributeID>Min Popularity</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f4f6c818-5fd5-4a86-8812-b7fb7d096b98">
+          <AttributeID>Max Popularity</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="dbfb00af-0884-49ef-a3e2-0fa5c93f9091">
+      <ID>Dim Date</ID>
+      <Name>Dim Date</Name>
+      <DimensionID>Dim Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="250b708b-998b-499a-b2ad-ec45e0c0f80c">
+          <AttributeID>Date Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6207cf17-c07f-4a2e-b07f-8ea7f1c2ba9f">
+          <AttributeID>Day</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5787e1a0-2cb0-471d-ab98-797a3a5e7c1d">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="446c5255-8f3e-479b-8df5-3fe0cbb248bd">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="fdeb662d-e792-43db-b8c9-b3e19ef7f8a9">
+          <AttributeID>Full Date</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="9fdd5d5f-9e49-4d9c-8b4e-3222cae2e222">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="4f77ce45-d70f-4ee0-bed7-91182d0de8f5">
+      <ID>Dim Artist</ID>
+      <Name>Dim Artist</Name>
+      <DimensionID>Dim Artist</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="0f912551-500d-41eb-87f4-c86cee0b1581">
+          <AttributeID>Artist Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ab146a2b-5be7-4a33-a6d9-9e38a645cc60">
+          <AttributeID>Artist Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="2c01d7b5-f6cc-4b3b-9d36-4625f69c8acb">
+      <ID>Dim Song - Date</ID>
+      <Name>Dim Song - Date</Name>
+      <DimensionID>Dim Date</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="b74fc5c5-7ce4-499c-a991-5bbaee9c6401">
+          <AttributeID>Date Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="83ed5c50-4a6c-4177-89f3-ad4ba6e7e536">
+          <AttributeID>Day</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8752ad70-d47b-42ae-81a0-53f80a19b80b">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="aebb4415-66d4-41c3-b3ae-abcdcb54bb74">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="f50aaeb5-eac4-4c1d-9a0c-e776531244f7">
+          <AttributeID>Full Date</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="1dd70022-34b4-4d4b-bb6a-56b3b3f04295">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="c24ca27a-6520-4bda-acaa-84b022769948">
+      <ID>Fact Song Snapshot</ID>
+      <Name>Fact Song Snapshot</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="2d60e4e3-6497-4c08-b03c-f8ae026be20f">
+          <ID>Daily Rank</ID>
+          <Name>Daily Rank</Name>
+          <Source dwd:design-time-name="c508dea1-64f3-4c6f-b889-55ddcb27db30">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bdd125cd-a1b7-4c8e-a99a-8f52f585ee49">
+              <TableID>dbo_FactSongSnapshot</TableID>
+              <ColumnID>daily_rank</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6e9666ed-5b52-4835-9dfa-ef86a18e84ec">
+          <ID>Daily Movement</ID>
+          <Name>Daily Movement</Name>
+          <Source dwd:design-time-name="62cde3b0-c206-4cc2-9213-ba094ff15909">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="be3f2071-c1d5-414f-bca2-4ae45ee4fe51">
+              <TableID>dbo_FactSongSnapshot</TableID>
+              <ColumnID>daily_movement</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="1dd7cbfd-5947-4745-b366-9f03dc138ba9">
+          <ID>Weekly Movement</ID>
+          <Name>Weekly Movement</Name>
+          <Source dwd:design-time-name="1ab1099f-0ce2-4973-a744-f9f33c09e446">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e7396f9f-f99a-4340-8b04-ce7b5d6c5088">
+              <TableID>dbo_FactSongSnapshot</TableID>
+              <ColumnID>weekly_movement</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fd106aa9-1982-4e45-95a1-de2b80794217">
+          <ID>Popularity</ID>
+          <Name>Popularity</Name>
+          <Source dwd:design-time-name="c7c0ce17-fd77-4b7e-97e6-1fc0cc6b3f85">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5ee6b360-4ed5-4021-a85e-941770befd82">
+              <TableID>dbo_FactSongSnapshot</TableID>
+              <ColumnID>popularity</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="439166d9-f671-47e3-ba24-c824f754897b">
+          <ID>Fact Song Snapshot Count</ID>
+          <Name>Fact Song Snapshot Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="79a62af0-9605-44c0-8337-207222cf989e">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="53a962df-4ef3-4511-a189-2b9f8fe3f127">
+              <TableID>dbo_FactSongSnapshot</TableID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="eae39b7b-efa4-4e5e-af77-31c722777dfc">
+          <ID>Minimum Daily Rank</ID>
+          <Name>Minimum Daily Rank</Name>
+          <AggregateFunction>Min</AggregateFunction>
+          <Source dwd:design-time-name="5b8f770d-06a2-43c2-82c4-a87f38794f1e">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c6e825f0-a79e-4e64-b0d6-2cb22fcc0dee">
+              <TableID>dbo_FactSongSnapshot</TableID>
+              <ColumnID>daily_rank</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="271242bf-51cb-43b6-8fe6-9a58f453eb4e">
+          <ID>Maximum Daily Rank</ID>
+          <Name>Maximum Daily Rank</Name>
+          <AggregateFunction>Max</AggregateFunction>
+          <Source dwd:design-time-name="b0d8166b-2853-440c-99fc-2f6e1a7c86fd">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="745f9e6e-30e3-4846-95fb-c7ecb7128bc3">
+              <TableID>dbo_FactSongSnapshot</TableID>
+              <ColumnID>daily_rank</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="16d6472e-ddca-4e8b-9686-b4c2441b5122">
+          <ID>Minimum Daily Movement</ID>
+          <Name>Minimum Daily Movement</Name>
+          <AggregateFunction>Min</AggregateFunction>
+          <Source dwd:design-time-name="03089343-c31b-4e8a-a624-eae3026a4ffb">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3069e886-c56c-49b7-a4a0-8b472967a7ec">
+              <TableID>dbo_FactSongSnapshot</TableID>
+              <ColumnID>daily_movement</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4d5b91be-acc5-4a2d-9939-04faa30df512">
+          <ID>Maximum Daily Movement</ID>
+          <Name>Maximum Daily Movement</Name>
+          <AggregateFunction>Max</AggregateFunction>
+          <Source dwd:design-time-name="ad3f1e1a-12a7-45d4-b2d7-817ff2804011">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="3466eb32-696c-4704-a6a3-ea75f76537dd">
+              <TableID>dbo_FactSongSnapshot</TableID>
+              <ColumnID>daily_movement</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="efff4b23-1d07-498c-88e8-2eb926eacb94">
+          <CubeDimensionID>Dim Country</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="44e0f764-8896-448b-87c3-4112af31a125">
+              <AttributeID>Country Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="5a7c1279-51d5-4b85-9d7f-734159ee75e6">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a72bc28c-7af7-493c-828b-a80f25e50140">
+                    <TableID>dbo_FactSongSnapshot</TableID>
+                    <ColumnID>country_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8725942e-4211-4429-886b-b115e73662e7">
+          <CubeDimensionID>Dim Song</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0f2d2fb2-43ab-40d2-8a24-342ce4ba18b8">
+              <AttributeID>Song Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="9e25f11a-7a37-4ada-915d-4096c5b9eee0">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="394955fb-a7c6-4840-b0f9-d238cb3159d8">
+                    <TableID>dbo_FactSongSnapshot</TableID>
+                    <ColumnID>song_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f78a34fb-e971-42c3-bf69-e3aa77d5ae1e">
+          <CubeDimensionID>Dim Popularity Group</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b30bc06b-2946-4462-938a-001a01b5122b">
+              <AttributeID>Popularity Group Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="805a114d-9928-47c1-80bc-645d46183791">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="a58f7333-5a1e-42ab-9227-c3921a611050">
+                    <TableID>dbo_FactSongSnapshot</TableID>
+                    <ColumnID>popularity_group_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9223afad-b8bc-4fef-8efe-9fd2b1fc9d7e">
+          <CubeDimensionID>Dim Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d90921ab-a878-4169-ad7f-bba7865717b4">
+              <AttributeID>Date Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d5b0aa79-d870-4242-a53b-e79063e5d02f">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b663f39a-e6f1-4a53-9152-af6a59f1959a">
+                    <TableID>dbo_FactSongSnapshot</TableID>
+                    <ColumnID>date_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="7d7e248b-1469-43a1-a8c0-d9d32e309e29">
+          <CubeDimensionID>Dim Artist</CubeDimensionID>
+          <MeasureGroupID>Song Artist</MeasureGroupID>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="b6ea0ee2-a0dc-4b98-b184-b81174ede15a">
+          <CubeDimensionID>Dim Song - Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="43bc1793-ad44-4caa-a416-be6fbfb041bf">
+              <AttributeID>Date Id</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Dim Song</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Date Id</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="e8ad400d-3821-4d62-8e10-cb40240ad50b">
+      <ID>Song Artist</ID>
+      <Name>Song Artist</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="3a46b851-310a-40d7-8df0-7291254c8c1f">
+          <ID>Song Artist Count</ID>
+          <Name>Song Artist Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="90affdd4-f4d7-4cff-8e08-f65372df28ed">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="526f9b6c-ec8d-4e25-90cd-2bf1243b61b6">
+              <TableID>dbo_SongArtist</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="bb7f9b81-95e6-4fbc-8908-72941abf2b70">
+          <CubeDimensionID>Dim Song</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4f50939f-7c75-475f-a4b8-41d87d62e4e2">
+              <AttributeID>Song Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="8be0358f-869a-496c-86be-2e978efd352c">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="95ff4b33-4f58-4115-a8db-b7cb3673bd45">
+                    <TableID>dbo_SongArtist</TableID>
+                    <ColumnID>song_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3d1277b4-3471-4773-ae44-86c42c2f7f30">
+          <CubeDimensionID>Dim Artist</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="2426bf07-297a-4c4e-bd4a-cac008028b2b">
+              <AttributeID>Artist Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="af9612d3-e44d-46a8-ad62-90e7f4b44053">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5d3386c6-8fca-4ac5-8712-8bc434966d9b">
+                    <TableID>dbo_SongArtist</TableID>
+                    <ColumnID>artist_id</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="3bec66b5-bacc-4959-a5d5-af3b12dcfe2f">
+          <CubeDimensionID>Dim Song - Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c63e03ce-7613-4364-8ad0-c15f4c72924d">
+              <AttributeID>Date Id</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Dim Song</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Date Id</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="a9bff518-beb4-4956-b67a-631ff70a8e53">
+    <DataSourceViewID>TRENDING SONGS SSIS</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="655bacc4-439b-4d43-a050-95bbf650cd17">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>/*
+The CALCULATE command controls the aggregation of leaf cells in the cube.
+If the CALCULATE command is deleted or modified, the data within the cube is affected.
+You should edit this command only if you manually specify how the cube is aggregated.
+*/
+CALCULATE;        
+CREATE DYNAMIC SET CURRENTCUBE.[Top10Songs]
+ AS FILTER(
+        NONEMPTY(
+            [Dim Song].[Name].[Name].MEMBERS,
+            (
+                [Measures].[Daily Rank],
+                [Dim Date].[Full Date].CURRENTMEMBER,
+                [Dim Country].[Country Name].CURRENTMEMBER
+            )
+        ),
+        (
+            [Measures].[Daily Rank],
+            [Dim Date].[Full Date].CURRENTMEMBER,
+            [Dim Country].[Country Name].CURRENTMEMBER
+        ) &lt;= 10
+    ) ;   
+CREATE MEMBER CURRENTCUBE.[Measures].[Largest Change (Abs)]
+ AS IIF(
+        ABS([Measures].[Maximum Daily Movement]) &gt;= ABS([Measures].[Minimum Daily Movement]),
+        ABS([Measures].[Maximum Daily Movement]),
+        ABS([Measures].[Minimum Daily Movement])
+    ), 
+FORMAT_STRING = "#,##0", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Song Snapshot';   
+CREATE DYNAMIC SET CURRENTCUBE.[Top5Album]
+ AS TOPCOUNT(
+        [Dim Song].[Album Name].[Album Name].MEMBERS,
+        5, 
+        [Measures].[Unique Song Count]
+    );                      
+CREATE MEMBER CURRENTCUBE.[Measures].[Average Daily Movement]
+ AS DIVIDE(
+        [Measures].[Daily Movement],
+        [Measures].[Fact Song Snapshot Count]
+    ), 
+FORMAT_STRING = "0.00", 
+VISIBLE = 1; 
+CREATE MEMBER CURRENTCUBE.[Measures].[Average Weekly Movement]
+ AS DIVIDE(
+        [Measures].[Weekly Movement],
+        [Measures].[Fact Song Snapshot Count]
+    ), 
+FORMAT_STRING = "0.00", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Song Snapshot'  ;                     
+CREATE MEMBER CURRENTCUBE.[Measures].[Unique Song Count]
+ AS COUNT(
+        NONEMPTY(
+            EXISTING([Dim Song].[Song Id].[Song Id].MEMBERS),
+            [Measures].[Fact Song Snapshot Count]
+        )
+    ), 
+FORMAT_STRING = "#,##0", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Song Snapshot';                          
+CREATE DYNAMIC SET CURRENTCUBE.[Top10SongsByCountry] AS 
+    GENERATE(
+        [Dim Country].[Country Name].[Country Name].MEMBERS,
+        {
+            [Dim Country].[Country Name].CURRENTMEMBER
+        } *
+        FILTER(
+            NONEMPTY(
+                [Dim Song].[Name].[Name].MEMBERS,
+                (
+                    [Measures].[Daily Rank],
+                    [Dim Date].[Full Date].CURRENTMEMBER,
+                    [Dim Country].[Country Name].CURRENTMEMBER
+                )
+            ),
+            (
+                [Measures].[Daily Rank],
+                [Dim Date].[Full Date].CURRENTMEMBER,
+                [Dim Country].[Country Name].CURRENTMEMBER
+            ) &lt;= 10
+        )
+    );          
+CREATE MEMBER CURRENTCUBE.[Measures].[Average Duration (ms)]
+ AS AVG(
+    EXISTING 
+        NONEMPTY(
+            [Dim Song].[Song Id].[Song Id].MEMBERS,
+            [Measures].[Fact Song Snapshot Count]
+        ),
+    VAL([Dim Song].[Song Id].CURRENTMEMBER.Properties("Duration Ms"))
+), 
+FORMAT_STRING = "#,##0", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Song Snapshot';                        
+CREATE MEMBER CURRENTCUBE.[Measures].[Average Danceability]
+ AS AVG(
+        EXISTING 
+        NONEMPTY(
+            [Dim Song].[Song Id].[Song Id].MEMBERS,
+            [Measures].[Fact Song Snapshot Count]
+        ),
+        VAL([Dim Song].[Song Id].CURRENTMEMBER.Properties("Danceability"))
+    ), 
+FORMAT_STRING = "0.000", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Song Snapshot';                        
+CREATE MEMBER CURRENTCUBE.[Measures].[Average Energy]
+ AS AVG(
+        EXISTING 
+        NONEMPTY(
+            [Dim Song].[Song Id].[Song Id].MEMBERS,
+            [Measures].[Fact Song Snapshot Count]
+        ),
+        VAL([Dim Song].[Song Id].CURRENTMEMBER.Properties("Energy"))
+    ), 
+FORMAT_STRING = "0.000", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Song Snapshot';                        
+CREATE MEMBER CURRENTCUBE.[Measures].[Average Popularity]
+ AS DIVIDE(
+        [Measures].[Popularity], 
+        [Measures].[Fact Song Snapshot Count]
+    ), 
+FORMAT_STRING = "#,##0.0", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Song Snapshot';                        
+CREATE DYNAMIC SET CURRENTCUBE.[Top 5 Artists]
+ AS TOPCOUNT(
+        [Dim Artist].[Artist Name].[Artist Name].MEMBERS,
+        5, 
+        [Measures].[Average Popularity]
+    );                       
+CREATE DYNAMIC SET CURRENTCUBE.[Top10SongsByLargestChange]
+ AS TOPCOUNT(
+    [Dim Song].[Name].[Name].MEMBERS,
+    10,
+    [Measures].[Largest Change (Abs)]
+); </Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+</Cube>

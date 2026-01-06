@@ -1,0 +1,19 @@
+﻿WITH
+MEMBER [Measures].[Largest Change (Abs)] AS
+    IIF(
+        ABS([Measures].[Maximum Daily Movement]) >= ABS([Measures].[Minimum Daily Movement]),
+        ABS([Measures].[Maximum Daily Movement]),
+        ABS([Measures].[Minimum Daily Movement])
+    ),
+    FORMAT_STRING = "#,##0"
+
+SELECT
+    { [Measures].[Largest Change (Abs)] } ON COLUMNS,
+    TOPCOUNT(
+        [Dim Song].[Name].[Name].MEMBERS,
+        10,
+        [Measures].[Largest Change (Abs)]
+    ) ON ROWS
+FROM [TRENDING SONGS SSIS]
+WHERE
+    ( [Dim Date].[Y_M_D].[Month].&[1]&[2025] );

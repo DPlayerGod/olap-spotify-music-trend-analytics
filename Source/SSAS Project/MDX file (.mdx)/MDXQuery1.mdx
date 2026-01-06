@@ -1,0 +1,29 @@
+﻿WITH
+/* tập country như cũ */
+SET Countries AS
+    [Dim Country].[Country Name].[Country Name].MEMBERS
+
+/* đây mới là phần thay: top 10 cho TỪNG country */
+SET Top10Songs AS
+    GENERATE(
+        Countries,
+        { Countries.CurrentMember } *
+        FILTER(
+            NONEMPTY(
+                [Dim Song].[Name].[Name].MEMBERS,
+                ( [Measures].[Daily Rank],
+                  [Dim Date].[Full Date].[2025-01-01],
+                  Countries.CurrentMember )
+            ),
+            ( [Measures].[Daily Rank],
+              [Dim Date].[Full Date].[2025-01-01],
+              Countries.CurrentMember ) <= 10
+        )
+    )
+
+SELECT
+    { [Measures].[Daily Rank] } ON COLUMNS,
+    NON EMPTY
+        Top10Songs ON ROWS
+FROM [TRENDING SONGS SSIS]
+WHERE ( [Dim Date].[Full Date].[2025-01-01] );

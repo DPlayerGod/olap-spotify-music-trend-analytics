@@ -1,0 +1,38 @@
+﻿WITH 
+SET [Top10Songs] AS
+    BOTTOMCOUNT(
+    NONEMPTY(
+        [Dim Song].[Name].[Name].MEMBERS,
+        (
+            [Measures].[Daily Rank],
+            [Dim Date].[Y_M_D].CURRENTMEMBER,
+            [Dim Country].[Country Name].CURRENTMEMBER
+        )
+    ),
+    10,
+    (
+        [Measures].[Daily Rank],
+        [Dim Date].[Y_M_D].CURRENTMEMBER,
+        [Dim Country].[Country Name].CURRENTMEMBER
+    )
+)
+
+
+
+SELECT
+    { [Measures].[Daily Rank] } ON COLUMNS,
+
+    NON EMPTY
+        (
+            [Dim Artist].[Artist Name].[Artist Name].MEMBERS *
+            [Top10Songs]
+        ) ON ROWS
+
+FROM
+    [TRENDING SONGS SSIS]
+
+WHERE
+    (
+        [Dim Date].[Full Date].[2025-03-28],
+        [Dim Country].[Country Name].&[Global]
+    );

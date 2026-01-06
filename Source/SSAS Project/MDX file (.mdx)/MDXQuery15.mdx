@@ -1,0 +1,14 @@
+SELECT
+    { [Measures].[Unique Song Count] } ON COLUMNS,
+
+    NON EMPTY
+    [Dim Song].[Time Signature].[Time Signature].MEMBERS ON ROWS
+
+FROM 
+    [TRENDING SONGS SSIS]
+
+WHERE 
+(
+    [Dim Date].[Y_M_D].[Month].&[6]&[2024] :
+    [Dim Date].[Y_M_D].[Month].&[8]&[2024]
+);

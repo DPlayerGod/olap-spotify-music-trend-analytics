@@ -1,0 +1,10 @@
+SELECT
+    { [Measures].[Average Duration (ms)] } ON COLUMNS,
+    [Dim Popularity Group].[Group Name].[Group Name].MEMBERS ON ROWS
+
+FROM [TRENDING SONGS SSIS]
+
+WHERE
+(
+    [Dim Date].[Y_M_D].[Month].&[5]&[2025]
+);
