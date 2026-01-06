@@ -43,7 +43,7 @@ The analysis supports ranking-pattern exploration, time-based trend monitoring, 
 - Power BI  
 - Looker Studio 
 
-### Data Processing / Mining (optional components)
+### Data Processing / Mining
 - Python (Jupyter Notebook)
 - pandas-based analytical exploration
 
@@ -68,11 +68,13 @@ https://www.kaggle.com/datasets/asaniczka/top-spotify-songs-in-73-countries-dail
   - Exported as the final dataset used in the warehouse pipeline
 
 - **Snowflake-style Data Warehouse schema**
+  - ![Schema](Images/snowflake.png)
   - Fact table for ranking and streaming metrics
   - Dimension tables for song, artist, album, country, date, and popularity group
   - Schema designed based on analytical and OLAP reporting requirements
 
 - **ETL pipeline (SSIS)**
+  - ![ETL](Images/etl.png)
   - Loads the preprocessed dataset into the Data Warehouse
   - Performs data transformation, mapping, and surrogate-key handling
   - Populates fact and dimension tables consistently
@@ -87,6 +89,10 @@ https://www.kaggle.com/datasets/asaniczka/top-spotify-songs-in-73-countries-dail
   - ranking-movement analysis
   - time-based and region-based comparisons
 - Queries are executed directly on the SSAS cube to support analytical reasoning.
+
+### Dashboard
+
+![Dashboard](Images/dashboard.png)
 
 ### Data Mining Component
 
@@ -127,7 +133,7 @@ This component illustrates how analytical results from the warehouse can be exte
   - **Excel Pivot file/** — Pivot exploration queries and exports  
   - **SSAS Project/** — OLAP cube (SSAS)  
   - **SSIS Project/** — ETL pipeline (SSIS)  
-  - **SSRS Project/** — Power BI and Locker
+  - **SSRS Project/** — Power BI and Locker Studio
 ## Author
 
 Student: **Đặng Quốc Cường**  
